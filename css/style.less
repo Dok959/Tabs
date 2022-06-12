@@ -1,0 +1,138 @@
+@font: 'Roboto', sans-serif;
+@header-color: #102a42;
+@text-color: #617d98;
+@radius: 0.5rem;
+
+html {
+	font-family: @font;
+	font-size: 10px;
+	line-height: 1.5;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: #f1f5f8;
+	color: @header-color;
+}
+
+.wrapper {
+	padding-top: 8rem;
+}
+
+.title-wrapper {
+	text-align: center;
+	margin-bottom: 6rem;
+}
+
+.header {
+	font-size: 3rem;
+	text-transform: capitalize;
+	letter-spacing: 0.25rem;
+	margin: 0 0 2rem;
+}
+
+.lead {
+	font-size: 1.5rem;
+	color: @text-color;
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.content-wrapper {
+	max-width: 1170px;
+	width: 90vw;
+	margin: 0 auto;
+
+	@media screen and (min-width: 992px) {
+		& {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 2rem;
+		}
+	}
+}
+
+.about__img {
+	display: block;
+	border-radius: @radius;
+	height: 30rem;
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: 3rem;
+	box-sizing: border-box;
+
+	@media screen and (min-width: 992px) {
+		& {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.tabs-wrapper {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	border-radius: @radius;
+}
+
+.tabs {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab {
+	background-color: #dae2ec;
+	cursor: pointer;
+	border: 0;
+	padding: 2rem 0;
+	text-transform: capitalize;
+	font-size: 1.6rem;
+	display: block;
+	transition: all 0.3s ease-in-out;
+	letter-spacing: 0.25rem;
+
+	&:first-child {
+		border-top-left-radius: @radius;
+	}
+
+	&:last-child {
+		border-top-right-radius: @radius;
+	}
+}
+
+.tab_active {
+	background-color: white;
+}
+
+.tab:hover:not(.tab_active) {
+	background-color: #ebf7ff;
+	color: #49a6e9;
+}
+
+.about__content {
+	background-color: white;
+	border-radius: @radius;
+}
+
+.content {
+	padding: 2rem;
+	display: none;
+}
+
+.content_active {
+	display: block;
+}
+
+.content__title {
+	font-size: 1.5rem;
+	text-transform: capitalize;
+	letter-spacing: 0.25rem;
+	margin: 0 0 1.5rem;
+}
+
+.content__description {
+	color: @text-color;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
